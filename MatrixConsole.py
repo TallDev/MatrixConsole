@@ -1,3 +1,10 @@
+import max7219.led as led
+
+
+matrix = led.matrix()
+
+
+
 import time
 class bcolors:
     HEADER = '\033[95m'
@@ -20,13 +27,16 @@ HELP = "help"
 def ipixel(x, y, onOff):
     print("pixel x:" + str(x) + " y: " + str(y) + " " + str(onOff))
     # matrix.pixel...
+    matrix.pixel(x, y, onOff)
 
 def isendMessage(mess):
     print("Message: " + mess)
     # matrix.sendMessage
+    matrix.show_Message(mess)
 def iclear():
     print("Matrix Clear")
     # matrix.clear
+    matrix.clear()
 
 def sendMessageSingleLetter(mess):
     letterList = list(mess)
